@@ -1,0 +1,56 @@
+{
+  "hardware": {
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "cpu": "x86_64",
+    "logical_cpu_count": 2,
+    "device": "cuda",
+    "gpu": "Tesla T4",
+    "versions": {
+      "torch": "2.14.1+cu130",
+      "scikit-learn": "1.6.1",
+      "transformers": "4.57.6",
+      "sentence-transformers": "5.7.0",
+      "datasets": "4.8.5",
+      "numpy": "2.4.6"
+    }
+  },
+  "timing": {
+    "inference_repeats": 5,
+    "warmup": 1,
+    "batch_size_neural": 32,
+    "max_length_distilbert": 128,
+    "training": "raw train text through fitted model; exclude downloads/model loading",
+    "inference": "raw test text through predictions; exclude model loading/metrics",
+    "reported_statistic": "median seconds for full test batch; milliseconds per SMS = median*1000/test_size",
+    "tuning": "separate from final train time"
+  },
+  "raw_inference_times_s": {
+    "TF-IDF": [
+      0.06198160900004268,
+      0.037083692999999585,
+      0.038005092999981116,
+      0.047021045000008144,
+      0.0662766069999634
+    ],
+    "Frozen MiniLM": [
+      0.879776636000031,
+      0.8284591430000319,
+      0.7598177269999837,
+      0.698077875000024,
+      0.5438832080000111
+    ],
+    "Fine-tuned DistilBERT": [
+      1.732611752999901,
+      1.7364187179999817,
+      1.7210192249999636,
+      1.757679302999918,
+      1.7498873680000315
+    ]
+  },
+  "splits": {
+    "train": 3610,
+    "dev": 774,
+    "test": 774
+  }
+}
