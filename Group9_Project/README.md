@@ -1,3 +1,4 @@
+
 # Group 9 — SMS Spam Detection
 
 ## Project Overview
@@ -57,3 +58,11 @@ The reported experiments used a Tesla T4 GPU. Training times include relevant fe
 
 ## Dataset Reference
 UCI SMS Spam Collection: https://archive.ics.uci.edu/dataset/228/sms+spam+collection
+
+## Supplementary notebooks
+- `Data_Preprocessing.ipynb`: data preparation and split verification.
+- `SMS_Classification_Testing.ipynb`: independent verification run and new SMS tests. Its training times differ from the primary run (0.2002, 4.0257, 67.2037 s); inference times are 0.0324, 0.8097, 1.7368 s. Do not mix runs.
+- `Robustness_Testing-2.ipynb`: 20 synthetic messages, six variants, 120 cases and 360 predictions. Historical outputs use the verification notebook's saved models. Run its save section first; keep the same Colab runtime or transfer the entire `group9_saved_models` folder to the new runtime and set `MODEL_DIR`. No personal Drive path is required.
+
+The primary benchmark is `SMSSpamDetection.ipynb` and the three accompanying CSV/JSON files. Supplementary results are not held-out test scores. Saved outputs are historical; rerunning may change timing.
+
